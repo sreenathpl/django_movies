@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style>
+      *  {
+       box-sizing: border-box;
+    }
+    .imageColumn {
+       float: left;
+       width: 30%;
+       padding: 10px;
+    }
+    </style>
+    {% for i in movies %}
+    <div class="alignRow">
+    <div class="imageColumn">
+       <center>
+        <img src="{{i.img.url}}"><br>
+        <a href="{% url 'appMovies:details' i.id %}" style="color:black;"> {{i.name}} <br>
+        </center>
+    </div>
+    </div>
+    {% endfor %}
+{% endblock %}

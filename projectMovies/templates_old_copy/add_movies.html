@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style>
+        table,tr,td{ border:1px solid black;
+        border-collapse:collapse;
+        padding :15px;
+        }
+    </style>
+<center>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td>Movie Name:</td>
+      <td><input type="text" name="name"></td>
+    </tr>
+    <tr>
+      <td>Movies Description</td>
+      <td><input type="text" name="desc"></td>
+    </tr>
+    <tr>
+      <td>Year</td>
+      <td><input type="number" name="year"></td>
+    </tr>
+    <tr>
+      <td>Movie category</td>
+      <td><input type="text" name="cat"></td>
+    </tr>
+    <tr>
+      <td>Movie duration</td>
+      <td><input type="text" name="duration" placeholder="2h 30m"></td>
+    </tr>
+    <tr>
+      <td>Movie director</td>
+      <td><input type="text" name="director"></td>
+    </tr>
+    <tr>
+      <td>Upload Movie Image</td>
+      <td><input type="file" name="img"></td>
+    </tr>
+  </table>
+  <input type="submit">
+</form>
+</center>
+{% endblock %}

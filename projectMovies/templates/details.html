@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style>
+
+    img {
+        padding: 10px;
+        }
+    td {
+      font-size: 20px;
+    }
+    </style>
+    <div class="container">
+        <div class ="row">
+            <div class ="col-md-5">
+                <img style="padding:10 px" src="{{movie.img.url}}" width="350" height="400">
+                <div class ="col-md-6">
+                    <center>
+                   <a href="{% url 'appMovies:update_movies' movie.id %}" class="btn btn-primary" >Update </a>
+                    <a href="{% url 'appMovies:delete_movies' movie.id %}" class="btn btn-primary">Delete </a>
+                    </center>
+                </div>
+
+            </div>
+            <div class="row"></div>
+
+            <div class ="col-md-7">
+                <table class="table">
+                    <tr>
+                        <td><h5>Movie Name</h5></td>
+                        <td><h4>{{movie.name}}</h4></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Movie description</h5> </td>
+                        <td align="justify"><p>{{movie.desc}}</p></td>
+                    </tr>
+                    <tr>
+                        <td> <h5>Year</h5></td>
+                        <td>{{movie.year}}</td>
+                    </tr>
+                    <tr>
+                        <td> <h5>Movie Category</h5></td>
+                        <td>{{movie.cat}}</td>
+                    </tr>
+                    <tr>
+                        <td> <h5>Duration</h5></td>
+                        <td>{{movie.duration}}</td>
+                    </tr>
+                    <tr>
+                        <td> <h5>Director</h5></td>
+                        <td>{{movie.director}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+<!--    <center>-->
+<!--    <table style="width:95%">-->
+<!--    <tr>-->
+<!--        <td> Movie Name</td>-->
+<!--        <td>{{movie.name}}</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td> Movie description</td>-->
+<!--        <td>{{movie.desc}}</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td> Year</td>-->
+<!--        <td>{{movie.year}}</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td> Movie Category</td>-->
+<!--        <td>{{movie.cat}}</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td> Duration</td>-->
+<!--        <td>{{movie.duration}}</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td> Director</td>-->
+<!--        <td>{{movie.director}}</td>-->
+<!--    </tr>-->
+<!--    </table>-->
+<!--            <a href="{% url 'appMovies:update_movies' movie.id %}">Update</a>-->
+<!--            <a href="{% url 'appMovies:delete_movies' movie.id %}">Delete</a>-->
+<!--    </center>-->

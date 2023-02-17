@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style>
+        table,tr,td{ border:1px solid black;
+        border-collapse:collapse;
+        padding :15px;
+        }
+    </style>
+    <center>
+    <img style="padding: 10px;" src="{{movie.img.url}}" width="200"><br>
+    <table style="width:95%">
+    <tr>
+        <td> Movie Name</td>
+        <td>{{movie.name}}</td>
+    </tr>
+    <tr>
+        <td> Movie description</td>
+        <td>{{movie.desc}}</td>
+    </tr>
+    <tr>
+        <td> Year</td>
+        <td>{{movie.year}}</td>
+    </tr>
+    <tr>
+        <td> Movie Category</td>
+        <td>{{movie.cat}}</td>
+    </tr>
+    <tr>
+        <td> Duration</td>
+        <td>{{movie.duration}}</td>
+    </tr>
+    <tr>
+        <td> Director</td>
+        <td>{{movie.director}}</td>
+    </tr>
+    </table>
+            <a href="{% url 'appMovies:update_movies' movie.id %}">Update</a>
+            <a href="{% url 'appMovies:delete_movies' movie.id %}">Delete</a>
+    </center>
+{% endblock %}
